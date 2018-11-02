@@ -16,7 +16,18 @@ const jsConfig = require(jsConfigPath);
 const newJsConfigPaths = {};
 
 pkgListJson.forEach(package => {
-    newJsConfigPaths[package.name] = [package.location];
+    const packageJsonLocation = path.join(package.location, 'package.json');
+    const packageJson = require(path.join(packageJsonLocation));
+    
+    const hasMain = Reflect.has(packageJson, 'main');
+    const hasModule = Reflect.has(packageJson, 'module');
+
+    const entryPoint = hasMain && hasModule ? 
+        packageJson.module : packageJson.main;
+
+    const entryPath = path.join(package.location, entryPoint);
+    const relEntryPath = path.relative(lernaRoot, entryPath);
+    newJsConfigPaths[package.name] = [`./${relEntryPath}`];
 });
 
 jsConfig.compilerOptions.paths = newJsConfigPaths;
