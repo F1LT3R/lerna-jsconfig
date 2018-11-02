@@ -1,6 +1,6 @@
 {
   "name": "lerna-jsconfig",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Generate jsconfig.json allowing VSCode to \"Open Definition\" your Lerna packages.",
   "main": "index.js",
   "bin": {
