@@ -1,0 +1,33 @@
+{
+  "name": "lerna-jsconfig",
+  "version": "0.1.0",
+  "description": "Generate jsconfig.json allowing VSCode to \"Open Definition\" your Lerna packages.",
+  "main": "index.js",
+  "bin": {
+    "lerna-jsconfig": "index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/f1lt3r/lerna-jsconfig.git"
+  },
+  "keywords": [
+    "lerna",
+    "vscode",
+    "jsconfig",
+    "packages",
+    "goto",
+    "definition"
+  ],
+  "author": "F1LT3R",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/f1lt3r/lerna-jsconfig/issues"
+  },
+  "homepage": "https://github.com/f1lt3r/lerna-jsconfig#readme",
+  "dependencies": {
+    "find-up": "^3.0.0"
+  }
+}
