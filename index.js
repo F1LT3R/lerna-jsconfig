@@ -19,6 +19,9 @@ pkgListJson.forEach(package => {
     newJsConfigPaths[package.name] = [package.location];
 });
 
-jsConfig.paths = newJsConfigPaths;
+jsConfig.compilerOptions.paths = newJsConfigPaths;
 
 fs.writeFileSync(jsConfigPath, JSON.stringify(jsConfig, null, 2));
+
+console.log(`jsconfig.json was updated in Lerna root: ${lernaRoot}`);
+console.log(jsConfig);
